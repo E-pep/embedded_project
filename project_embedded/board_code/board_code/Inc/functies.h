@@ -33,7 +33,7 @@ err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 
 err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
 
-void questionrequest(struct tcp_pcb *connectie,char datam[20]);
+uint8_t questionrequest(struct tcp_pcb *connectie,char vraag[2]);
 
 uint8_t kies(uint16_t xpos,uint16_t ypos);
 

@@ -55,6 +55,8 @@
 
 #include "functies.h"
 
+#define	aantal_kansen		3
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -173,11 +175,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   uint8_t score = 0;
-  uint8_t kansen = 0;
+  char    scorestring[3] = "";
+  char    scoreprint[15] = "score = ";
+  uint8_t kansen = aantal_kansen;
+  char    kansenstring[15] = "";
   uint8_t aangeduid = 0;
-  uint8_t juist = 0;
+  uint8_t juist_antw = 0;
   uint8_t vraagnr = 0;
-  char data[20] = "vraag/0";
   TS_StateTypeDef touch;
 
   initLCD();
@@ -197,9 +201,13 @@ int main(void)
   }
   while(touch.touchDetected == 0);
   background();
-  questionrequest(connectie,data);
+  juist_antw = questionrequest(connectie,"0");
   /* USER CODE END 2 */
+	BSP_LCD_SetFont(&Font16);
+	BSP_LCD_DisplayStringAt(0,0,"score = 0",RIGHT_MODE);
 
+	sprintf(kansenstring,"kansen = %d",kansen);
+	BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -207,15 +215,58 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-	  	  //MX_LWIP_Process();
+
 	  	  BSP_TS_GetState(&touch);
+
+	  	  if(juist_antw == 4)		//spelleke gedaan
+	  	  {
+	  		  score += 1;
+	  		  background();
+	  		  for(;;)
+	  		  {
+
+	  		  }
+	  	  }
+
+	  	  if(kansen == 0)
+	  	  {
+	  		  background();
+	  		  for(;;)
+	  		  {
+
+	  		  }
+	  	  }
 
 
 
 		  if(touch.touchDetected)
 		  {
 
-			  aangeduid = kies(touch.touchX[0],touch.touchY);
+			  aangeduid = kies(touch.touchX[0],touch.touchY[0]);
+			  if(aangeduid != 0 && aangeduid < 4)
+			  {
+			  if(aangeduid != juist_antw)
+			  {
+				  kansen -= 1;
+				sprintf(kansenstring,"kansen = %d",kansen);
+				    BSP_LCD_SetFont(&Font16);
+					BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
+					HAL_Delay(500);
+			  }
+			  else
+			  {
+
+				  background();
+				  score += 1;
+				  sprintf(scoreprint,"score = %d",score);
+				  BSP_LCD_SetFont(&Font16);
+				  BSP_LCD_SetFont(&Font16);
+				  BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
+				  BSP_LCD_DisplayStringAt(0,0,scoreprint,RIGHT_MODE);
+				  sprintf(scorestring,"%d",score);
+				  juist_antw = questionrequest(connectie,scorestring);
+			  }
+			  }
 
 		  }
 

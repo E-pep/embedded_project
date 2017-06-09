@@ -8,7 +8,7 @@
 #include "functies.h"
 #include "startscherm.h"
 
-
+static uint8_t juist = 0;
 
 void initLCD( void )
 {
@@ -48,7 +48,7 @@ err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 		static uint16_t receivedLen = 0;
 		struct pbuf * buffer = p;
 		static int teller = 0;
-		static int juist;
+		static int juist_a;
 		int i;
 
 
@@ -69,7 +69,7 @@ err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 		}
 
 
-		juist = data[teller - 1];
+		juist_a = data[teller - 1];
 
 
 
@@ -87,13 +87,13 @@ err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 	char toPrint[50];
 		sprintf(toPrint,"Len: %d",receivedLen);
 		BSP_LCD_SetFont(&Font12);
-		BSP_LCD_DisplayStringAtLine(4,toPrint);
+		BSP_LCD_DisplayStringAtLine(20,toPrint);
 		if(p->flags != 0)
 		{
 		//	tcp_recved(tpcb,receivedLen);
 			char toPrint2[50] = "finito";
 			BSP_LCD_SetFont(&Font12);
-			BSP_LCD_DisplayStringAtLine(5,toPrint2);
+			BSP_LCD_DisplayStringAtLine(21,toPrint2);
 			receivedLen = 0;
 			teller = 0;
 			pbuf_free(p);
@@ -101,16 +101,30 @@ err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 			{
 				WDA_LCD_DrawBitmap(data,x_offset1,y_offset,img_size,img_size,LTDC_PIXEL_FORMAT_RGB565);
 				flag +=1;
+				if(juist_a == 0x2040)
+				{
+					juist = 1;
+				}
 			}
 			else if(flag == 1)
 			{
 				WDA_LCD_DrawBitmap(data,x_offset2,y_offset,img_size,img_size,LTDC_PIXEL_FORMAT_RGB565);
 				flag +=1;
+
+				if(juist_a == 0x2040)
+				{
+					juist = 2;
+				}
 			}
 			else if(flag == 2)
 			{
 				WDA_LCD_DrawBitmap(data,x_offset3,y_offset,img_size,img_size,LTDC_PIXEL_FORMAT_RGB565);
 				flag = 0;
+
+				if(juist_a == 0x2040)
+				{
+					juist = 3;
+				}
 			}
 			return ERR_OK;
 		}
@@ -128,8 +142,16 @@ err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t e
 {
 		char vraag[50] = "";
 		strncpy(vraag,p->payload,p->tot_len);
-		BSP_LCD_SetFont(&Font16);
-		BSP_LCD_DisplayStringAt(0,10,(uint8_t*)vraag,CENTER_MODE);
+		if(strcmp(vraag,"uit") == 0)
+		{
+			background();
+			juist = 4;
+		}
+		else
+		{
+			BSP_LCD_SetFont(&Font16);
+			BSP_LCD_DisplayStringAt(0,50,(uint8_t*)vraag,CENTER_MODE);
+		}
 
 
 		tcp_recved(tpcb,p->tot_len);
@@ -139,23 +161,43 @@ err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t e
 }
 
 
-void questionrequest(struct tcp_pcb *connectie,char datam[20])
+uint8_t questionrequest(struct tcp_pcb *connectie,char vraag[2])
 {
 	uint8_t i;
-	char data[20];
-	strcpy(data,datam);
+
 	connectie->flags = 0;
-	tcp_write(connectie,&data,20,1);		// We sturen een q om een quote terug te krijgen
+	char data[20] = "vraag/";
+	strcat(data,vraag);
+	tcp_write(connectie,data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
 	tcp_recv(connectie,questionOntvangen);	// We willen nu wat data ontvangen
 	while(!connectie->flags)
 	{
 		MX_LWIP_Process();
 	}
 
-	for(i=0;i<3;i++)
+	if(juist != 4)
 	{
+	char data2[20] = "foto0/";
+	strcat(data2,vraag);
     connectie->flags=0;
-	char data2[20] = "foto0/0";
+	tcp_write(connectie,&data2,sizeof(data2),1);		// We sturen een q om een quote terug te krijgen
+	tcp_recv(connectie,imageOntvangen);	// We willen nu wat data ontvangen
+	while(!connectie->flags)
+	{
+		MX_LWIP_Process();
+	}
+
+    connectie->flags=0;
+    data2[4] = '1';
+	tcp_write(connectie,&data2,sizeof(data2),1);		// We sturen een q om een quote terug te krijgen
+	tcp_recv(connectie,imageOntvangen);	// We willen nu wat data ontvangen
+	while(!connectie->flags)
+	{
+		MX_LWIP_Process();
+	}
+
+    connectie->flags=0;
+    data2[4] = '2';
 	tcp_write(connectie,&data2,sizeof(data2),1);		// We sturen een q om een quote terug te krijgen
 	tcp_recv(connectie,imageOntvangen);	// We willen nu wat data ontvangen
 	while(!connectie->flags)
@@ -163,6 +205,8 @@ void questionrequest(struct tcp_pcb *connectie,char datam[20])
 		MX_LWIP_Process();
 	}
 	}
+
+	return juist;
 }
 
 uint8_t kies(uint16_t xpos,uint16_t ypos)

@@ -1,6 +1,65 @@
-22:08:58 **** Incremental Build of configuration Debug for project board_code ****
+23:44:25 **** Incremental Build of configuration Debug for project board_code ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:135:1: warning: "/*" within comment [-Wcomment]
+ /* USER CODE END PFP */
+ ^
+../Src/main.c: In function 'main':
+../Src/main.c:207:30: warning: pointer targets in passing argument 3 of 'BSP_LCD_DisplayStringAt' differ in signedness [-Wpointer-sign]
+  BSP_LCD_DisplayStringAt(0,0,"score = 0",RIGHT_MODE);
+                              ^
+In file included from ../Src/main.c:52:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:221:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^
+../Src/main.c:210:31: warning: pointer targets in passing argument 3 of 'BSP_LCD_DisplayStringAt' differ in signedness [-Wpointer-sign]
+  BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
+                               ^
+In file included from ../Src/main.c:52:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:221:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^
+../Src/main.c:253:35: warning: pointer targets in passing argument 3 of 'BSP_LCD_DisplayStringAt' differ in signedness [-Wpointer-sign]
+      BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
+                                   ^
+In file included from ../Src/main.c:52:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:221:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^
+../Src/main.c:264:36: warning: pointer targets in passing argument 3 of 'BSP_LCD_DisplayStringAt' differ in signedness [-Wpointer-sign]
+       BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
+                                    ^
+In file included from ../Src/main.c:52:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:221:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^
+../Src/main.c:265:35: warning: pointer targets in passing argument 3 of 'BSP_LCD_DisplayStringAt' differ in signedness [-Wpointer-sign]
+       BSP_LCD_DisplayStringAt(0,0,scoreprint,RIGHT_MODE);
+                                   ^
+In file included from ../Src/main.c:52:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:221:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^
+../Src/main.c:184:11: warning: unused variable 'vraagnr' [-Wunused-variable]
+   uint8_t vraagnr = 0;
+           ^
+Finished building: ../Src/main.c
+ 
+Building target: board_code.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
+Finished building target: board_code.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
+arm-none-eabi-size "board_code.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 369044	    588	  75740	 445372	  6cbbc	board_code.elf
+ 
 
-22:08:59 Build Finished (took 1s.403ms)
+23:44:29 Build Finished (took 3s.852ms)
 

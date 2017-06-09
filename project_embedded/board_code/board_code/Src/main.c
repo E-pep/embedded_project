@@ -125,24 +125,10 @@ err_t verbindCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
 	return ERR_OK;
 }
 
-/*
-err_t getImageCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
-{
-	char data[20] = "foto0/0";
-	tcp_write(tpcb,&data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
-	tcp_recv(tpcb,imageOntvangen);	// We willen nu wat data ontvangen
-	return ERR_OK;
-}
 
-err_t getQuestionCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
-{
-	char data[20] = "vraag/0";
-	//char data[20] = "q";
-	tcp_write(tpcb,&data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
-	tcp_recv(tpcb,questionOntvangen);	// We willen nu wat data ontvangen
-	return ERR_OK;
-}
-*/
+
+/*
+
 
 /* USER CODE END PFP */
 
@@ -186,11 +172,13 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
-  uint8_t start = 0;
   uint8_t score = 0;
   uint8_t kansen = 0;
+  uint8_t aangeduid = 0;
+  uint8_t juist = 0;
+  uint8_t vraagnr = 0;
+  char data[20] = "vraag/0";
   TS_StateTypeDef touch;
-  int i;
 
   initLCD();
 
@@ -202,6 +190,14 @@ int main(void)
   connectie = tcp_new();
   tcp_connect(connectie,&server,1234,verbindCallback);
 
+  do
+  {
+	  MX_LWIP_Process();
+	  BSP_TS_GetState(&touch);
+  }
+  while(touch.touchDetected == 0);
+  background();
+  questionrequest(connectie,data);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -211,61 +207,16 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-	  BSP_TS_GetState(&touch);
-	  MX_LWIP_Process();
+	  	  //MX_LWIP_Process();
+	  	  BSP_TS_GetState(&touch);
+
 
 
 		  if(touch.touchDetected)
 		  {
-			  if(touch.touchX[0] > 102 && touch.touchX[0] < 162 && touch.touchY[0] > 100 && touch.touchY[0] < 160)
-			  {
-			  background();
-			  BSP_LCD_DrawCircle(touch.touchX[0],touch.touchY[0],10);
 
-/*
-				char data[20] = "vraag/0";
-				tcp_write(connectie,&data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
-				tcp_recv(connectie,questionOntvangen);	// We willen nu wat data ontvangen
-				while(!connectie->flags)
-				{
-					MX_LWIP_Process();
-				}
-				connectie->flags=0;*/
-/*			  int i;
-			  for(i = 0;i<4;i++)
-			  {
+			  aangeduid = kies(touch.touchX[0],touch.touchY);
 
-				    connectie->flags=0;
-					char data2[20] = "foto0/0";
-					tcp_write(connectie,&data2,sizeof(data2),1);		// We sturen een q om een quote terug te krijgen
-					tcp_recv(connectie,imageOntvangen);	// We willen nu wat data ontvangen
-					while(!connectie->flags)
-					{
-						MX_LWIP_Process();
-					}
-			  }
-*/
-				connectie->flags = 0;
-				char data[20] = "vraag/0";
-				tcp_write(connectie,&data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
-				tcp_recv(connectie,questionOntvangen);	// We willen nu wat data ontvangen
-				while(!connectie->flags)
-				{
-					MX_LWIP_Process();
-				}
-
-				for(i=0;i<3;i++)
-				{
-			    connectie->flags=0;
-				char data2[20] = "foto0/0";
-				tcp_write(connectie,&data2,sizeof(data2),1);		// We sturen een q om een quote terug te krijgen
-				tcp_recv(connectie,imageOntvangen);	// We willen nu wat data ontvangen
-				while(!connectie->flags)
-				{
-					MX_LWIP_Process();
-				}
-				}
-			  }
 		  }
 
 

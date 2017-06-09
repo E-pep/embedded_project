@@ -38,14 +38,6 @@ void background( void )
 }
 
 
-err_t getImageCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
-{
-	char data[20] = "foto0/0";
-	tcp_write(tpcb,&data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
-	tcp_recv(tpcb,imageOntvangen);	// We willen nu wat data ontvangen
-	return ERR_OK;
-}
-
 err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 {
 
@@ -107,17 +99,17 @@ err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 			pbuf_free(p);
 			if(flag == 0)
 			{
-				WDA_LCD_DrawBitmap(data,102,100,70,70,LTDC_PIXEL_FORMAT_RGB565);
+				WDA_LCD_DrawBitmap(data,x_offset1,y_offset,img_size,img_size,LTDC_PIXEL_FORMAT_RGB565);
 				flag +=1;
 			}
 			else if(flag == 1)
 			{
-				WDA_LCD_DrawBitmap(data,202,100,70,70,LTDC_PIXEL_FORMAT_RGB565);
+				WDA_LCD_DrawBitmap(data,x_offset2,y_offset,img_size,img_size,LTDC_PIXEL_FORMAT_RGB565);
 				flag +=1;
 			}
 			else if(flag == 2)
 			{
-				WDA_LCD_DrawBitmap(data,302,100,70,70,LTDC_PIXEL_FORMAT_RGB565);
+				WDA_LCD_DrawBitmap(data,x_offset3,y_offset,img_size,img_size,LTDC_PIXEL_FORMAT_RGB565);
 				flag = 0;
 			}
 			return ERR_OK;
@@ -136,9 +128,9 @@ err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t e
 {
 		char vraag[50] = "";
 		strncpy(vraag,p->payload,p->tot_len);
-		static int tel = 2;
-		BSP_LCD_DisplayStringAtLine(tel,vraag);
-		tel++;
+		BSP_LCD_SetFont(&Font16);
+		BSP_LCD_DisplayStringAt(0,10,(uint8_t*)vraag,CENTER_MODE);
+
 
 		tcp_recved(tpcb,p->tot_len);
 //		tcp_close(tpcb);
@@ -147,3 +139,52 @@ err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t e
 }
 
 
+void questionrequest(struct tcp_pcb *connectie,char datam[20])
+{
+	uint8_t i;
+	char data[20];
+	strcpy(data,datam);
+	connectie->flags = 0;
+	tcp_write(connectie,&data,20,1);		// We sturen een q om een quote terug te krijgen
+	tcp_recv(connectie,questionOntvangen);	// We willen nu wat data ontvangen
+	while(!connectie->flags)
+	{
+		MX_LWIP_Process();
+	}
+
+	for(i=0;i<3;i++)
+	{
+    connectie->flags=0;
+	char data2[20] = "foto0/0";
+	tcp_write(connectie,&data2,sizeof(data2),1);		// We sturen een q om een quote terug te krijgen
+	tcp_recv(connectie,imageOntvangen);	// We willen nu wat data ontvangen
+	while(!connectie->flags)
+	{
+		MX_LWIP_Process();
+	}
+	}
+}
+
+uint8_t kies(uint16_t xpos,uint16_t ypos)
+{
+	  if(ypos > y_offset && ypos < (y_offset + img_size)) 			//juiste Y as
+	  {
+		  if(xpos > x_offset1 && xpos < (x_offset1 + img_size))		//antwoord 1
+		  {
+			  return 1;
+		  }
+		  else if(xpos > x_offset2 && xpos < (x_offset2 + img_size))	//antwoord 2
+		  {
+			  return 2;
+		  }
+		  else if(xpos > x_offset2 && xpos < (x_offset3 + img_size))	//antwoord 3
+		  {
+			  return 3;
+		  }
+		  else
+		  {
+			  return 0 ;
+		  }
+
+	  }
+}

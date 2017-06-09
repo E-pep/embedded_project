@@ -14,6 +14,11 @@
 #include "stm32746g_discovery_sdram.h"
 #include "stm32746g_discovery_ts.h"
 
+#define  y_offset 100
+#define  x_offset1 100
+#define  x_offset2 200
+#define  x_offset3 300
+#define  img_size  70
 
 
 
@@ -27,6 +32,10 @@ err_t getImageCallback(void *arg, struct tcp_pcb *tpcb, err_t err);
 err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
 
 err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
+
+void questionrequest(struct tcp_pcb *connectie,char datam[20]);
+
+uint8_t kies(uint16_t xpos,uint16_t ypos);
 
 
 #endif /* FUNCTIES_H_ */

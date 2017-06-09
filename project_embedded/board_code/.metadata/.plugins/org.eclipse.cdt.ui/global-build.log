@@ -1,4 +1,4 @@
-22:47:39 **** Incremental Build of configuration Debug for project board_code ****
+21:44:12 **** Incremental Build of configuration Debug for project board_code ****
 make all 
 Building file: ../Src/functies.c
 Invoking: MCU GCC Compiler
@@ -23,7 +23,7 @@ C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Dr
  void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
       ^
 ../Src/functies.c: In function 'imageOntvangen':
-../Src/functies.c:98:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
    BSP_LCD_DisplayStringAtLine(4,toPrint);
                                  ^
 In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
@@ -31,7 +31,7 @@ In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/bo
 C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
  void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
           ^
-../Src/functies.c:104:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
     BSP_LCD_DisplayStringAtLine(5,toPrint2);
                                   ^
 In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
@@ -39,199 +39,58 @@ In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/bo
 C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
  void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
           ^
-../Src/functies.c:59:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
    static int juist;
               ^
-../Src/functies.c: In function 'questionOntvangen':
-../Src/functies.c:140:35: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-   BSP_LCD_DisplayStringAtLine(tel,vraag);
-                                   ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
-Finished building: ../Src/functies.c
- 
-Building target: board_code.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
-Finished building target: board_code.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
-arm-none-eabi-size "board_code.elf"
-   text	   data	    bss	    dec	    hex	filename
- 365652	    584	  75736	 441972	  6be74	board_code.elf
- 
-22:48:00 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-make: Nothing to be done for `all'.
-22:49:04 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-make: Nothing to be done for `all'.
-23:16:33 **** Build of configuration Debug for project board_code ****
-make all 
-make: Nothing to be done for `all'.
-23:26:45 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-make: Nothing to be done for `all'.
-23:27:49 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-make: Nothing to be done for `all'.
-23:30:28 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-make: Nothing to be done for `all'.
-23:36:22 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-Building file: ../Src/functies.c
-Invoking: MCU GCC Compiler
-%cd%
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
-../Src/functies.c: In function 'initLCD':
-../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
-   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
-                      ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
- void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
-      ^
-../Src/functies.c: In function 'background':
-../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
-    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
-                       ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
- void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
-      ^
-../Src/functies.c: In function 'imageOntvangen':
-../Src/functies.c:98:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-   BSP_LCD_DisplayStringAtLine(4,toPrint);
-                                 ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
-../Src/functies.c:104:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+../Src/functies.c: In function 'questionrequest':
+../Src/functies.c:146:34: warning: 'sizeof' on array function parameter 'data' will return size of 'char **' [-Wsizeof-array-argument]
+  tcp_write(connectie,&data,sizeof(data),1);  // We sturen een q om een quote terug te krijgen
                                   ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
-../Src/functies.c:59:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
-   static int juist;
-              ^
-../Src/functies.c: In function 'questionOntvangen':
-../Src/functies.c:140:35: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-   BSP_LCD_DisplayStringAtLine(tel,vraag);
-                                   ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
+../Src/functies.c:142:54: note: declared here
+ void questionrequest(struct tcp_pcb *connectie,char *data[20])
+                                                      ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:188:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 Finished building: ../Src/functies.c
  
-Building target: board_code.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
-Finished building target: board_code.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
-arm-none-eabi-size "board_code.elf"
-   text	   data	    bss	    dec	    hex	filename
- 365652	    584	  75736	 441972	  6be74	board_code.elf
- 
-23:38:35 **** Incremental Build of configuration Debug for project board_code ****
-make all 
-Building file: ../Src/functies.c
-Invoking: MCU GCC Compiler
-%cd%
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
-../Src/functies.c: In function 'initLCD':
-../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
-   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
-                      ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
- void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
-      ^
-../Src/functies.c: In function 'background':
-../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
-    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
-                       ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
- void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
-      ^
-../Src/functies.c: In function 'imageOntvangen':
-../Src/functies.c:98:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-   BSP_LCD_DisplayStringAtLine(4,toPrint);
-                                 ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
-../Src/functies.c:104:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-    BSP_LCD_DisplayStringAtLine(5,toPrint2);
-                                  ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
-../Src/functies.c:59:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
-   static int juist;
-              ^
-../Src/functies.c: In function 'questionOntvangen':
-../Src/functies.c:140:35: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
-   BSP_LCD_DisplayStringAtLine(tel,vraag);
-                                   ^
-In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
-                 from ../Src/functies.c:8:
-C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
- void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
-          ^
-Finished building: ../Src/functies.c
- 
-Building target: board_code.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
-Finished building target: board_code.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
-arm-none-eabi-size "board_code.elf"
-   text	   data	    bss	    dec	    hex	filename
- 365652	    584	  75736	 441972	  6be74	board_code.elf
- 
-23:48:59 **** Incremental Build of configuration Debug for project board_code ****
-make all 
 Building file: ../Src/main.c
 Invoking: MCU GCC Compiler
 %cd%
 arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:133:1: warning: "/*" within comment [-Wcomment]
+ /* USER CODE END PFP */
+ ^
 ../Src/main.c: In function 'main':
-../Src/main.c:191:11: warning: unused variable 'kansen' [-Wunused-variable]
+../Src/main.c:200:29: warning: passing argument 2 of 'questionrequest' from incompatible pointer type [-Wincompatible-pointer-types]
+   questionrequest(connectie,data);
+                             ^
+In file included from ../Src/main.c:56:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:36:6: note: expected 'char **' but argument is of type 'char *'
+ void questionrequest(struct tcp_pcb *connectie,char *data[20]);
+      ^
+../Src/main.c:218:39: warning: passing argument 2 of 'kies' makes integer from pointer without a cast [-Wint-conversion]
+      aangeduid = kies(touch.touchX[0],touch.touchY);
+                                       ^
+In file included from ../Src/main.c:56:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:38:9: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ uint8_t kies(uint16_t xpos,uint16_t ypos);
+         ^
+../Src/main.c:179:11: warning: unused variable 'vraagnr' [-Wunused-variable]
+   uint8_t vraagnr = 0;
+           ^
+../Src/main.c:178:11: warning: unused variable 'juist' [-Wunused-variable]
+   uint8_t juist = 0;
+           ^
+../Src/main.c:177:11: warning: variable 'aangeduid' set but not used [-Wunused-but-set-variable]
+   uint8_t aangeduid = 0;
+           ^
+../Src/main.c:176:11: warning: unused variable 'kansen' [-Wunused-variable]
    uint8_t kansen = 0;
            ^
-../Src/main.c:190:11: warning: unused variable 'score' [-Wunused-variable]
+../Src/main.c:175:11: warning: unused variable 'score' [-Wunused-variable]
    uint8_t score = 0;
-           ^
-../Src/main.c:189:11: warning: unused variable 'start' [-Wunused-variable]
-   uint8_t start = 0;
            ^
 Finished building: ../Src/main.c
  
@@ -245,23 +104,314 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
 arm-none-eabi-size "board_code.elf"
    text	   data	    bss	    dec	    hex	filename
- 365664	    584	  75736	 441984	  6be80	board_code.elf
+ 368344	    588	  75732	 444664	  6c8f8	board_code.elf
  
-23:53:31 **** Incremental Build of configuration Debug for project board_code ****
+21:44:22 **** Incremental Build of configuration Debug for project board_code ****
 make all 
+make: Nothing to be done for `all'.
+21:45:35 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+Building file: ../Src/functies.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
+../Src/functies.c: In function 'initLCD':
+../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                      ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'background':
+../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                       ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'imageOntvangen':
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+   BSP_LCD_DisplayStringAtLine(4,toPrint);
+                                 ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+                                  ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+   static int juist;
+              ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:188:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Src/functies.c
+ 
+Building target: board_code.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
+Finished building target: board_code.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
+arm-none-eabi-size "board_code.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 368344	    588	  75732	 444664	  6c8f8	board_code.elf
+ 
+21:46:16 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+make: Nothing to be done for `all'.
+21:54:29 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+Building file: ../Src/functies.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
+../Src/functies.c: In function 'initLCD':
+../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                      ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'background':
+../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                       ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'imageOntvangen':
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+   BSP_LCD_DisplayStringAtLine(4,toPrint);
+                                 ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+                                  ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+   static int juist;
+              ^
+../Src/functies.c: In function 'questionrequest':
+../Src/functies.c:146:14: warning: passing argument 2 of 'strcpy' from incompatible pointer type [-Wincompatible-pointer-types]
+  strcpy(sdvk,data);
+              ^
+In file included from c:\ac6\systemworkbench\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.7.0.201602121829\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h:50,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:47,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/stm32f7xx_hal_conf.h:243,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:48,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:4,
+                 from ../Src/functies.c:8:
+c:\ac6\systemworkbench\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.7.0.201602121829\tools\compiler\arm-none-eabi\include\string.h:30:8: note: expected 'const char * restrict' but argument is of type 'char **'
+ char  *_EXFUN(strcpy,(char *__restrict, const char *__restrict));
+        ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Src/functies.c
+ 
+Building target: board_code.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
+Finished building target: board_code.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
+arm-none-eabi-size "board_code.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 368368	    588	  75732	 444688	  6c910	board_code.elf
+ 
+21:55:26 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+Building file: ../Src/functies.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
+../Src/functies.c: In function 'initLCD':
+../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                      ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'background':
+../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                       ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'imageOntvangen':
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+   BSP_LCD_DisplayStringAtLine(4,toPrint);
+                                 ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+                                  ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+   static int juist;
+              ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:188:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Src/functies.c
+ 
+Building target: board_code.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
+Finished building target: board_code.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
+arm-none-eabi-size "board_code.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 368344	    588	  75732	 444664	  6c8f8	board_code.elf
+ 
+21:57:14 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+Building file: ../Src/functies.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
+../Src/functies.c: In function 'initLCD':
+../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                      ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'background':
+../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                       ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'imageOntvangen':
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+   BSP_LCD_DisplayStringAtLine(4,toPrint);
+                                 ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+                                  ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+   static int juist;
+              ^
+../Src/functies.c: In function 'questionrequest':
+../Src/functies.c:146:14: warning: passing argument 2 of 'strcpy' from incompatible pointer type [-Wincompatible-pointer-types]
+  strcpy(data,datam);
+              ^
+In file included from c:\ac6\systemworkbench\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.7.0.201602121829\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h:50,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:47,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/stm32f7xx_hal_conf.h:243,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:48,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:4,
+                 from ../Src/functies.c:8:
+c:\ac6\systemworkbench\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.7.0.201602121829\tools\compiler\arm-none-eabi\include\string.h:30:8: note: expected 'const char * restrict' but argument is of type 'char **'
+ char  *_EXFUN(strcpy,(char *__restrict, const char *__restrict));
+        ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Src/functies.c
+ 
 Building file: ../Src/main.c
 Invoking: MCU GCC Compiler
 %cd%
 arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:133:1: warning: "/*" within comment [-Wcomment]
+ /* USER CODE END PFP */
+ ^
 ../Src/main.c: In function 'main':
-../Src/main.c:191:11: warning: unused variable 'kansen' [-Wunused-variable]
+../Src/main.c:200:29: warning: passing argument 2 of 'questionrequest' from incompatible pointer type [-Wincompatible-pointer-types]
+   questionrequest(connectie,data);
+                             ^
+In file included from ../Src/main.c:56:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:36:6: note: expected 'char **' but argument is of type 'char *'
+ void questionrequest(struct tcp_pcb *connectie,char *datam[20]);
+      ^
+../Src/main.c:218:39: warning: passing argument 2 of 'kies' makes integer from pointer without a cast [-Wint-conversion]
+      aangeduid = kies(touch.touchX[0],touch.touchY);
+                                       ^
+In file included from ../Src/main.c:56:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:38:9: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ uint8_t kies(uint16_t xpos,uint16_t ypos);
+         ^
+../Src/main.c:179:11: warning: unused variable 'vraagnr' [-Wunused-variable]
+   uint8_t vraagnr = 0;
+           ^
+../Src/main.c:178:11: warning: unused variable 'juist' [-Wunused-variable]
+   uint8_t juist = 0;
+           ^
+../Src/main.c:177:11: warning: variable 'aangeduid' set but not used [-Wunused-but-set-variable]
+   uint8_t aangeduid = 0;
+           ^
+../Src/main.c:176:11: warning: unused variable 'kansen' [-Wunused-variable]
    uint8_t kansen = 0;
            ^
-../Src/main.c:190:11: warning: unused variable 'score' [-Wunused-variable]
+../Src/main.c:175:11: warning: unused variable 'score' [-Wunused-variable]
    uint8_t score = 0;
-           ^
-../Src/main.c:189:11: warning: unused variable 'start' [-Wunused-variable]
-   uint8_t start = 0;
            ^
 Finished building: ../Src/main.c
  
@@ -275,5 +425,197 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
 arm-none-eabi-size "board_code.elf"
    text	   data	    bss	    dec	    hex	filename
- 365676	    584	  75736	 441996	  6be8c	board_code.elf
+ 368368	    588	  75732	 444688	  6c910	board_code.elf
  
+21:59:48 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+Building file: ../Src/functies.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
+../Src/functies.c: In function 'initLCD':
+../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                      ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'background':
+../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                       ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'imageOntvangen':
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+   BSP_LCD_DisplayStringAtLine(4,toPrint);
+                                 ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+                                  ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+   static int juist;
+              ^
+../Src/functies.c: In function 'questionrequest':
+../Src/functies.c:146:14: warning: passing argument 2 of 'strcpy' from incompatible pointer type [-Wincompatible-pointer-types]
+  strcpy(data,datam);
+              ^
+In file included from c:\ac6\systemworkbench\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.7.0.201602121829\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h:50,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:47,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/stm32f7xx_hal_conf.h:243,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:48,
+                 from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:4,
+                 from ../Src/functies.c:8:
+c:\ac6\systemworkbench\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.7.0.201602121829\tools\compiler\arm-none-eabi\include\string.h:30:8: note: expected 'const char * restrict' but argument is of type 'char **'
+ char  *_EXFUN(strcpy,(char *__restrict, const char *__restrict));
+        ^
+../Src/functies.c:148:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  tcp_write(connectie,(char)&datam,20,1);  // We sturen een q om een quote terug te krijgen
+                      ^
+../Src/functies.c:148:22: warning: passing argument 2 of 'tcp_write' makes pointer from integer without a cast [-Wint-conversion]
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:6:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h:387:18: note: expected 'const void *' but argument is of type 'char'
+ err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
+                  ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Src/functies.c
+ 
+Building target: board_code.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
+Finished building target: board_code.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
+arm-none-eabi-size "board_code.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 368372	    588	  75732	 444692	  6c914	board_code.elf
+ 
+22:07:14 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+Building file: ../Src/functies.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/functies.d" -MT"Src/functies.o" -o "Src/functies.o" "../Src/functies.c"
+../Src/functies.c: In function 'initLCD':
+../Src/functies.c:27:22: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                      ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'background':
+../Src/functies.c:36:23: warning: passing argument 1 of 'WDA_LCD_DrawBitmap' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    WDA_LCD_DrawBitmap(SLIMSTEMENS_DATA,0,0,SLIMSTEMENS_DATA_X_PIXEL,SLIMSTEMENS_DATA_Y_PIXEL,SLIMSTEMENS_DATA_FORMAT);
+                       ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:255:6: note: expected 'void *' but argument is of type 'const short unsigned int *'
+ void WDA_LCD_DrawBitmap(void *pSrc, uint32_t xPos, uint32_t yPos, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
+      ^
+../Src/functies.c: In function 'imageOntvangen':
+../Src/functies.c:90:33: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+   BSP_LCD_DisplayStringAtLine(4,toPrint);
+                                 ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:96:34: warning: pointer targets in passing argument 2 of 'BSP_LCD_DisplayStringAtLine' differ in signedness [-Wpointer-sign]
+    BSP_LCD_DisplayStringAtLine(5,toPrint2);
+                                  ^
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:13:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc/stm32746g_discovery_lcd.h:220:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void     BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+          ^
+../Src/functies.c:51:14: warning: variable 'juist' set but not used [-Wunused-but-set-variable]
+   static int juist;
+              ^
+../Src/functies.c: In function 'questionrequest':
+../Src/functies.c:148:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  tcp_write(connectie,(char)&datam,20,1);  // We sturen een q om een quote terug te krijgen
+                      ^
+../Src/functies.c:148:22: warning: passing argument 2 of 'tcp_write' makes pointer from integer without a cast [-Wint-conversion]
+In file included from C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:6:0,
+                 from ../Src/functies.c:8:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h:387:18: note: expected 'const void *' but argument is of type 'char'
+ err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
+                  ^
+../Src/functies.c: In function 'kies':
+../Src/functies.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Src/functies.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+%cd%
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -D__weak="__attribute__((weak))" -D__packed="__attribute__((__packed__))" -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/apps" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/lwip/priv" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/netif/ppp/polarssl" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/src/include/posix/sys" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Middlewares/Third_Party/LwIP/system/arch" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/CMSIS/Include" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/inc" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/BSP/src" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Common" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/ft5336" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Components/rk043fn48h" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities" -I"C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Drivers/Utilities/Fonts"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:133:1: warning: "/*" within comment [-Wcomment]
+ /* USER CODE END PFP */
+ ^
+../Src/main.c: In function 'main':
+../Src/main.c:218:39: warning: passing argument 2 of 'kies' makes integer from pointer without a cast [-Wint-conversion]
+      aangeduid = kies(touch.touchX[0],touch.touchY);
+                                       ^
+In file included from ../Src/main.c:56:0:
+C:/Users/paull/Desktop/school2016-2017/project_embedded/board_code/board_code/Inc/functies.h:38:9: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ uint8_t kies(uint16_t xpos,uint16_t ypos);
+         ^
+../Src/main.c:179:11: warning: unused variable 'vraagnr' [-Wunused-variable]
+   uint8_t vraagnr = 0;
+           ^
+../Src/main.c:178:11: warning: unused variable 'juist' [-Wunused-variable]
+   uint8_t juist = 0;
+           ^
+../Src/main.c:177:11: warning: variable 'aangeduid' set but not used [-Wunused-but-set-variable]
+   uint8_t aangeduid = 0;
+           ^
+../Src/main.c:176:11: warning: unused variable 'kansen' [-Wunused-variable]
+   uint8_t kansen = 0;
+           ^
+../Src/main.c:175:11: warning: unused variable 'score' [-Wunused-variable]
+   uint8_t score = 0;
+           ^
+Finished building: ../Src/main.c
+ 
+Building target: board_code.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "board_code.elf" @"objects.list"  
+Finished building target: board_code.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "board_code.elf" "board_code.bin"
+arm-none-eabi-size "board_code.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 368372	    588	  75732	 444692	  6c914	board_code.elf
+ 
+22:08:58 **** Incremental Build of configuration Debug for project board_code ****
+make all 
+make: Nothing to be done for `all'.

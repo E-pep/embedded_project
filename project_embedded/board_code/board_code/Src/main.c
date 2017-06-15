@@ -55,7 +55,7 @@
 
 #include "functies.h"
 
-#define	aantal_kansen		3
+#define	AantalKansen		( 3 )
 
 /* USER CODE END Includes */
 
@@ -100,36 +100,29 @@ static void MX_TIM6_Init(void);
 static void MX_USART6_UART_Init(void);
 
 /* USER CODE BEGIN PFP */
-/* Private function prototypes -----------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
 
-err_t verbindOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
+static err_t prvMainVerbindOntvangen( void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err )
 {
-		char ontvangen[50];
-		strcpy(ontvangen,p->payload);
-		BSP_LCD_DisplayStringAt(0, 10, (uint8_t*) "druk op het scherm om te starten", CENTER_MODE);
-
-		tcp_recved(tpcb,p->tot_len);
-	//	tcp_abort(tpcb);
-		return ERR_OK;
-}
-
-
-
-
-
-
-
-err_t verbindCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
-{
-	char data[20] = "verbind/0";
-	tcp_write(tpcb,&data,sizeof(data),1);		// We sturen een q om een quote terug te krijgen
-	tcp_recv(tpcb,verbindOntvangen);	// We willen nu wat data ontvangen
+	char cOntvangen[50];
+	strcpy( cOntvangen, p->payload );
+	BSP_LCD_DisplayStringAt( 0, 10, ( uint8_t* ) "druk op het scherm om te starten", CENTER_MODE );
+	tcp_recved(tpcb,p->tot_len);
 	return ERR_OK;
 }
+/*------------------------------------------------------------------------------------------------*/
+
+static err_t prvMainVerbindCallback( void *arg, struct tcp_pcb *tpcb, err_t err )
+{
+	char cData[20] = "verbind/0";
+	tcp_write(tpcb,&cData,sizeof(cData),1);		// We sturen een q om een quote terug te krijgen
+	tcp_recv(tpcb,prvMainVerbindOntvangen);	// We willen nu wat data ontvangen
+	return ERR_OK;
+}
+/*------------------------------------------------------------------------------------------------*/
 
 
 
-/*
 
 
 /* USER CODE END PFP */
@@ -138,7 +131,7 @@ err_t verbindCallback(void *arg, struct tcp_pcb *tpcb, err_t err)
 
 /* USER CODE END 0 */
 
-int main(void)
+int main( void )
 {
 
   /* USER CODE BEGIN 1 */
@@ -174,64 +167,73 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
-  uint8_t score = 0;
-  char    scorestring[3] = "";
-  char    scoreprint[15] = "score = ";
-  uint8_t kansen = aantal_kansen;
-  char    kansenstring[15] = "";
-  uint8_t aangeduid = 0;
-  uint8_t juist_antw = 0;
-  uint8_t vraagnr = 0;
-  TS_StateTypeDef touch;
+  uint8_t ucScore = 0;
+  char    cScoreString[3] = "";
+  char    cScorePrint[15] = "score = ";
+  uint8_t ucKansen = AantalKansen;
+  char    cKansenString[15] = "";
+  uint8_t ucAangeduid = 0;
+  uint8_t ucJuistAntwoord = 0;
+  TS_StateTypeDef xTouch;
 
-  initLCD();
+  vFunctiesInitLCD();
 
 
-  struct tcp_pcb *connectie;
-  struct ip4_addr server;
-  IP4_ADDR(&server, 169,254,70,45);
+  struct tcp_pcb *xConnectie;
+  struct ip4_addr xServer;
+  IP4_ADDR( &xServer, 169, 254, 70, 45 );
 
-  connectie = tcp_new();
-  tcp_connect(connectie,&server,1234,verbindCallback);
+  xConnectie = tcp_new();
+  tcp_connect( xConnectie, &xServer, 1234, prvMainVerbindCallback );
 
   do
   {
 	  MX_LWIP_Process();
-	  BSP_TS_GetState(&touch);
+	  BSP_TS_GetState( &xTouch );
   }
-  while(touch.touchDetected == 0);
-  background();
-  juist_antw = questionrequest(connectie,"0");
-  /* USER CODE END 2 */
-	BSP_LCD_SetFont(&Font16);
-	BSP_LCD_DisplayStringAt(0,0,"score = 0",RIGHT_MODE);
+  while( xTouch.touchDetected == 0 );
+  vFunctiesBackground();
+  ucJuistAntwoord = ucFunctiesQuestionRequest( xConnectie, "0" );
 
-	sprintf(kansenstring,"kansen = %d",kansen);
-	BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
+  BSP_LCD_SetFont( &Font16 );
+  BSP_LCD_DisplayStringAt( 0, 0, "score = 0", RIGHT_MODE );
+
+  sprintf( cKansenString, "kansen = %d", ucKansen);
+  BSP_LCD_DisplayStringAt( 0, 20, cKansenString, RIGHT_MODE );
+  /* USER CODE END 2 */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
+  while ( 1 )
   {
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
 
-	  	  BSP_TS_GetState(&touch);
+	  	  BSP_TS_GetState( &xTouch );
 
-	  	  if(juist_antw == 4)		//spelleke gedaan
+	  	  if( ucJuistAntwoord == 4 )		//gewonnen
 	  	  {
-	  		  score += 1;
-	  		  background();
-	  		  for(;;)
+	  		  vFunctiesBackground();
+	  		  BSP_LCD_SetFont( &Font24 );
+	  		  BSP_LCD_DisplayStringAt( 0, 10, ( uint8_t* ) "proficiat, u hebt gewonnen!", CENTER_MODE );
+	  		  sprintf( cScorePrint, "score = %d", ucScore );
+	  		  BSP_LCD_DisplayStringAt( 0, 50, cScorePrint, CENTER_MODE );
+
+	  		  for( ;; )
 	  		  {
 
 	  		  }
 	  	  }
 
-	  	  if(kansen == 0)
+	  	  if( ucKansen == 0 )			//game over
 	  	  {
-	  		  background();
-	  		  for(;;)
+	  		  vFunctiesBackground();
+	  		  BSP_LCD_SetFont( &Font24 );
+	  		  BSP_LCD_DisplayStringAt( 0, 10, ( uint8_t* ) "game over loser!", CENTER_MODE );
+	  		  sprintf( cScorePrint,"score = %d",ucScore );
+	  		  BSP_LCD_DisplayStringAt( 0, 50, cScorePrint, CENTER_MODE );
+
+	  		  for( ;; )
 	  		  {
 
 	  		  }
@@ -239,33 +241,33 @@ int main(void)
 
 
 
-		  if(touch.touchDetected)
+		  if( xTouch.touchDetected )
 		  {
 
-			  aangeduid = kies(touch.touchX[0],touch.touchY[0]);
-			  if(aangeduid != 0 && aangeduid < 4)
+			  ucAangeduid = ucFunctiesKies( xTouch.touchX[0], xTouch.touchY[0] );
+			  if( ( ucAangeduid != 0 ) && ( ucAangeduid < 4 ) )
 			  {
-			  if(aangeduid != juist_antw)
-			  {
-				  kansen -= 1;
-				sprintf(kansenstring,"kansen = %d",kansen);
-				    BSP_LCD_SetFont(&Font16);
-					BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
-					HAL_Delay(500);
-			  }
-			  else
-			  {
+				  if( ucAangeduid != ucJuistAntwoord )
+				  {
+					  ucKansen -= 1;
+					  sprintf( cKansenString, "kansen = %d", ucKansen );
+					  BSP_LCD_SetFont( &Font16 );
+					  BSP_LCD_DisplayStringAt(0, 20, cKansenString, RIGHT_MODE);
+					  HAL_Delay( 500 );
+				  }
+				  else
+				  {
 
-				  background();
-				  score += 1;
-				  sprintf(scoreprint,"score = %d",score);
-				  BSP_LCD_SetFont(&Font16);
-				  BSP_LCD_SetFont(&Font16);
-				  BSP_LCD_DisplayStringAt(0,20,kansenstring,RIGHT_MODE);
-				  BSP_LCD_DisplayStringAt(0,0,scoreprint,RIGHT_MODE);
-				  sprintf(scorestring,"%d",score);
-				  juist_antw = questionrequest(connectie,scorestring);
-			  }
+					  vFunctiesBackground();
+					  ucScore += 1;
+					  sprintf( cScorePrint, "score = %d", ucScore );
+					  BSP_LCD_SetFont( &Font16 );
+					  BSP_LCD_SetFont( &Font16 );
+					  BSP_LCD_DisplayStringAt( 0, 20, cKansenString, RIGHT_MODE );
+					  BSP_LCD_DisplayStringAt( 0, 0, cScorePrint, RIGHT_MODE );
+					  sprintf( cScoreString,"%d", ucScore );
+					  ucJuistAntwoord = ucFunctiesQuestionRequest( xConnectie, cScoreString );
+				  }
 			  }
 
 		  }

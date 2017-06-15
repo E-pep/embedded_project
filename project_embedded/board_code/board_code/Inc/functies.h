@@ -14,28 +14,22 @@
 #include "stm32746g_discovery_sdram.h"
 #include "stm32746g_discovery_ts.h"
 
-#define  y_offset 100
-#define  x_offset1 100
-#define  x_offset2 200
-#define  x_offset3 300
-#define  img_size  70
+#define  YOffset 100
+#define  XOffset1 100
+#define  XOffset2 200
+#define  XOffset3 300
+#define  ImgSize  70
 
 
 
-void initLCD( void );
+void vFunctiesInitLCD( void );
 
-void background( void );
+void vFunctiesBackground( void );
 
 
-err_t getImageCallback(void *arg, struct tcp_pcb *tpcb, err_t err);
+uint8_t ucFunctiesQuestionRequest( struct tcp_pcb *connectie, char vraag[2] );
 
-err_t imageOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
-
-err_t questionOntvangen(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err);
-
-uint8_t questionrequest(struct tcp_pcb *connectie,char vraag[2]);
-
-uint8_t kies(uint16_t xpos,uint16_t ypos);
+uint8_t ucFunctiesKies( uint16_t xpos, uint16_t ypos );
 
 
 #endif /* FUNCTIES_H_ */

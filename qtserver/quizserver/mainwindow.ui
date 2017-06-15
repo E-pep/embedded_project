@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -88,6 +88,9 @@
             <width>411</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="maxLength">
+           <number>43</number>
           </property>
          </widget>
         </item>

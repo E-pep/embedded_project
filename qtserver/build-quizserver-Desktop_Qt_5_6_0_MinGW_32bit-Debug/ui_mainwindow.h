@@ -136,6 +136,7 @@ public:
         vraagline = new QLineEdit(page_2);
         vraagline->setObjectName(QStringLiteral("vraagline"));
         vraagline->setMinimumSize(QSize(411, 0));
+        vraagline->setMaxLength(43);
 
         horizontalLayout_2->addWidget(vraagline);
 
@@ -262,7 +263,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

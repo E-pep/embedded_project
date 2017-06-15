@@ -82,8 +82,8 @@ void MainWindow::on_newvraag_ok_clicked()
     {
         if(i == (temp->juistevraag)-1)
         {
-            temp->antwoorden[i].append(0xffff);
-            temp->antwoorden[i].append(0xffff);
+            temp->antwoorden[i].append(0x0020);
+            temp->antwoorden[i].append(0x0040);
 
         }
         else
@@ -132,18 +132,22 @@ void MainWindow::GetIsBinnen()
 
     QStringList lijst = request.split('/');
 
-    if(lijst[1].toInt() > vragen.length())
-    {
-        clientConnection->write("proficiat,u hebt het spel uitgespeeld");
-    }
-    else if(lijst[0] == "verbind")
+
+    if(lijst[0] == "verbind")
     {
         clientConnection->write("verbonden");
     }
     else if(lijst[0] == "vraag")
     {
+        if(lijst[1].toInt() >= vragen.length())
+        {
+            clientConnection->write("uit");
+        }
+        else
+        {
         QString vraagtemp = vragen[lijst[1].toInt()]->vraagquote;
         clientConnection->write(vraagtemp.toUtf8());
+        }
     }
     else if(lijst[0] == "foto0")
     {
